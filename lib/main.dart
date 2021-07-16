@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart'; // Material Design Widget 포함한 패키지
 
 //앱 시작 부분, 특별히 수정할 일이 없음
@@ -14,26 +16,37 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: MyHomePage(
-          title:
-              'Flutter Demo Home Page'), //표시할 화면의 인스턴스, 여기에 작성하는 위젯이 실제 이 앱이 표시하는 위젯
+      home: MyHomePage(title: 'MyHomePage'),
     );
   }
 }
 
 //시작 클래스가 실제로 표시하는 클래스. 카운터 앱 화면
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
-  // createState 재정의, StatefulWidget 생성될 때 한 번만 실행되는 메서드
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Hello World'),
+      ),
+      body: Text(
+        'Hello World',
+        style: TextStyle(fontSize: 40),
+      ),
+    );
+  }
+
+  // // createState 재정의, StatefulWidget 생성될 때 한 번만 실행되는 메서드
+  // @override
+  // _MyHomePageState createState() => _MyHomePageState();
 }
 
 //MyHomePage 클래스의 상태를 나타내는 State 클래스, 변경 가능한 상태를 property 변수로 표현
-class _MyHomePageState extends State<MyHomePage> {
+/* class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0; //화면에 표시할 상태값인 카운터 숫자
 
   //counter 변수를 1 증가시키고 화면을 다시 그리는 메서드
@@ -76,3 +89,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+ */
