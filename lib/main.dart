@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart'; // Material Design Widget 포함한 패키지
 import 'package:flutter_test1/first_page.dart';
-import 'package:flutter_test1/second_page.dart';
 
 //앱 시작 부분, 특별히 수정할 일이 없음
 void main() => runApp(MyApp());
